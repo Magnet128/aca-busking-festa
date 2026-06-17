@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 아카펠라 버스킹 축제</title>
+    <meta
+      name="description"
+      content="2026 아카펠라 버스킹 축제 참가팀 모집 안내. 2026년 10월 17일 신촌 명물쉼터에서 열립니다."
+    />
+    <style>
+      :root {
+        --ink: #24190f;
+        --muted: #72583f;
+        --paper: #fff8ef;
+        --paper-strong: #fffdf8;
+        --line: rgba(87, 55, 29, 0.18);
+        --leaf: #5f7540;
+        --clay: #b75b35;
+        --gold: #d99a32;
+        --wine: #733047;
+        --shadow: 0 24px 70px rgba(66, 36, 18, 0.16);
+        --busking-photo: url("./assets/acappella-busking-hero.png");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          Pretendard,
+          "Noto Sans KR",
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          system-ui,
+          sans-serif;
+        line-height: 1.65;
+        background:
+          radial-gradient(circle at 10% 10%, rgba(217, 154, 50, 0.22), transparent 30rem),
+          radial-gradient(circle at 92% 20%, rgba(95, 117, 64, 0.16), transparent 28rem),
+          linear-gradient(180deg, #fff8ed 0%, #f6eadb 54%, #fffaf1 100%);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem clamp(1rem, 4vw, 4rem);
+        color: #fffaf2;
+        background: rgba(38, 25, 16, 0.62);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.72rem;
+        min-width: 0;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2.25rem;
+        height: 2.25rem;
+        flex: 0 0 auto;
+        place-items: center;
+        color: #2c1b10;
+        background: var(--gold);
+        border-radius: 50%;
+        box-shadow: inset 0 -0.2rem 0 rgba(0, 0, 0, 0.12);
+      }
+
+      .brand span:last-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.35rem;
+        font-size: 0.92rem;
+      }
+
+      .nav a {
+        padding: 0.45rem 0.7rem;
+        text-decoration: none;
+        border-radius: 999px;
+      }
+
+      .nav a:hover {
+        background: rgba(255, 255, 255, 0.13);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: min(100svh, 58rem);
+        padding: 6.8rem 1.25rem 3.6rem;
+        overflow: hidden;
+        color: #fff8ef;
+        text-align: center;
+        background:
+          linear-gradient(180deg, rgba(18, 12, 8, 0.72) 0%, rgba(43, 25, 15, 0.56) 48%, rgba(90, 49, 65, 0.54) 100%),
+          var(--busking-photo) center / cover;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(circle at 50% 34%, rgba(0, 0, 0, 0.12), transparent 24rem),
+          linear-gradient(180deg, rgba(18, 12, 8, 0.24), rgba(90, 49, 65, 0.26)),
+          var(--busking-photo) center / cover;
+        opacity: 0.72;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse at center bottom, rgba(255, 226, 168, 0.22), transparent 36rem),
+          linear-gradient(180deg, transparent 62%, rgba(255, 248, 239, 0.9) 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 1.65rem;
+        width: min(1120px, 100%);
+        margin: auto;
+      }
+
+      .hero-inner > *,
+      .section-inner > * {
+        min-width: 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 auto 1.1rem;
+        padding: 0.42rem 0.78rem;
+        color: #ffe2a8;
+        font-size: 0.9rem;
+        font-weight: 800;
+        border: 1px solid rgba(255, 226, 168, 0.44);
+        border-radius: 999px;
+        background: rgba(36, 20, 12, 0.58);
+      }
+
+      .hero h1 {
+        display: grid;
+        gap: 0.18em;
+        justify-items: center;
+        max-width: 100%;
+        margin: 0;
+        font-size: clamp(3.9rem, 13vw, 7rem);
+        line-height: 0.86;
+        letter-spacing: 0;
+        word-break: keep-all;
+      }
+
+      .title-line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .title-line:nth-child(2) {
+        color: #fff2df;
+      }
+
+      .title-line:nth-child(3) {
+        color: #ffe7b5;
+        font-size: 0.68em;
+        line-height: 1;
+      }
+
+      .hero-copy {
+        max-width: 34rem;
+        margin: 1.35rem auto 0;
+        color: #fff8ee;
+        font-size: clamp(1rem, 4vw, 1.14rem);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 3.25rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.8rem 1.1rem;
+        font-weight: 800;
+        text-decoration: none;
+        border-radius: 999px;
+      }
+
+      .button.primary {
+        color: #28170c;
+        background: #f5b24a;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+      }
+
+      .button.secondary {
+        color: #fff8ef;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-panel {
+        width: min(100%, 62rem);
+        padding: clamp(1.2rem, 3vw, 1.65rem);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        background: rgba(44, 25, 16, 0.68);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero-panel dl {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 0;
+      }
+
+      .hero-panel div {
+        padding-bottom: 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
+        border-bottom: 0;
+      }
+
+      .hero-panel div:last-child {
+        padding-bottom: 0;
+        border-right: 0;
+      }
+
+      dt {
+        color: #f4c875;
+        font-size: 0.86rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      dd {
+        margin: 0.18rem 0 0;
+        font-size: clamp(1rem, 1.6vw, 1.16rem);
+        font-weight: 800;
+        color: #fffdf8;
+        text-align: center;
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+      }
+
+      section {
+        padding: clamp(3.8rem, 8vw, 6.5rem) 1.25rem;
+      }
+
+      .section-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 0.6rem;
+        justify-items: center;
+        max-width: 34rem;
+        margin: 0 auto 2rem;
+        text-align: center;
+      }
+
+      .section-heading p {
+        margin: 0;
+        color: var(--muted);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .label {
+        color: var(--clay);
+        font-size: 0.88rem;
+        font-weight: 900;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        line-height: 1.12;
+        letter-spacing: 0;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        text-wrap: balance;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.18rem;
+        line-height: 1.35;
+      }
+
+      .quick-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-inline: auto;
+      }
+
+      .info-card,
+      .recruit-box,
+      .notice-box,
+      .host-box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.78);
+        box-shadow: 0 18px 52px rgba(93, 55, 25, 0.08);
+      }
+
+      .info-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 11rem;
+        padding: 1.35rem;
+        color: #fffaf2;
+        text-align: center;
+      }
+
+      .info-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(180deg, rgba(26, 15, 8, 0.5), rgba(80, 43, 34, 0.66)),
+          var(--busking-photo) center / cover;
+      }
+
+      .info-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(180deg, rgba(31, 18, 10, 0.34), rgba(31, 18, 10, 0.72));
+      }
+
+      .info-card:nth-child(1)::before {
+        background-image:
+          linear-gradient(180deg, rgba(26, 15, 8, 0.5), rgba(80, 43, 34, 0.62)),
+          var(--busking-photo);
+        background-position: 18% 42%;
+      }
+
+      .info-card:nth-child(2)::before {
+        background-image:
+          linear-gradient(180deg, rgba(26, 15, 8, 0.5), rgba(80, 43, 34, 0.62)),
+          var(--busking-photo);
+        background-position: 44% 44%;
+      }
+
+      .info-card:nth-child(3)::before {
+        background-image:
+          linear-gradient(180deg, rgba(26, 15, 8, 0.5), rgba(80, 43, 34, 0.62)),
+          var(--busking-photo);
+        background-position: 68% 40%;
+      }
+
+      .info-card:nth-child(4)::before {
+        background-image:
+          linear-gradient(180deg, rgba(26, 15, 8, 0.5), rgba(80, 43, 34, 0.62)),
+          var(--busking-photo);
+        background-position: 86% 52%;
+      }
+
+      .info-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .info-card .icon {
+        display: grid;
+        width: 2.5rem;
+        height: 2.5rem;
+        place-items: center;
+        margin: 0 auto 1rem;
+        color: #24190f;
+        background: #f5b24a;
+        border-radius: 50%;
+      }
+
+      .info-card p {
+        margin: 0.55rem 0 0;
+        color: #fff4df;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .recruit {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(217, 154, 50, 0.1) 100%);
+      }
+
+      .recruit-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        gap: 1.2rem;
+        align-items: start;
+      }
+
+      .recruit-box {
+        padding: clamp(1.25rem, 3vw, 2rem);
+        background: var(--paper-strong);
+      }
+
+      .deadline {
+        display: grid;
+        gap: 0.5rem;
+        padding: clamp(1.25rem, 3vw, 2rem);
+        color: #fff9ef;
+        text-align: center;
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(115, 48, 71, 0.92), rgba(183, 91, 53, 0.9)),
+          linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.16));
+        box-shadow: var(--shadow);
+      }
+
+      .deadline strong {
+        font-size: clamp(1.65rem, 5vw, 2.45rem);
+        line-height: 1.08;
+        word-break: keep-all;
+      }
+
+      .detail-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+      }
+
+      .detail-row {
+        display: grid;
+        grid-template-columns: 8rem minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail-row:last-child {
+        border-bottom: 0;
+      }
+
+      .detail-row dt {
+        color: var(--clay);
+        text-align: center;
+      }
+
+      .detail-row dd {
+        color: var(--ink);
+        font-weight: 700;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        text-align: center;
+      }
+
+      .inline-list {
+        display: grid;
+        gap: 0.45rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .inline-list li {
+        display: grid;
+        grid-template-columns: 0.42rem minmax(0, 1fr);
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.52rem 0.65rem;
+        border-radius: 8px;
+        background: rgba(183, 91, 53, 0.08);
+        color: var(--ink);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .inline-list li::before {
+        content: "";
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 50%;
+        background: var(--clay);
+      }
+
+      .empty-link {
+        display: block;
+        width: min(100%, 18rem);
+        min-height: 1.8rem;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(115, 48, 71, 0.34);
+      }
+
+      .notes {
+        background:
+          linear-gradient(180deg, rgba(95, 117, 64, 0.08), rgba(255, 255, 255, 0)),
+          var(--paper);
+      }
+
+      .notice-box {
+        padding: clamp(1.25rem, 3vw, 2rem);
+      }
+
+      .notice-list {
+        display: grid;
+        gap: 0.9rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .notice-list li {
+        display: grid;
+        grid-template-columns: 1.8rem minmax(0, 1fr);
+        gap: 0.8rem;
+        align-items: start;
+        color: #3a2818;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .notice-list li::before {
+        content: "!";
+        display: grid;
+        width: 1.8rem;
+        height: 1.8rem;
+        place-items: center;
+        color: #fff8ef;
+        font-size: 0.8rem;
+        font-weight: 900;
+        border-radius: 50%;
+        background: var(--wine);
+      }
+
+      .hosts {
+        padding-bottom: 5rem;
+      }
+
+      .hosts .section-inner {
+        display: grid;
+        justify-items: center;
+      }
+
+      .host-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+        gap: 1.2rem;
+        width: min(58rem, 100%);
+        margin-inline: auto;
+      }
+
+      .host-box {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(1.25rem, 3vw, 1.8rem);
+        background: rgba(255, 253, 248, 0.88);
+        text-align: center;
+      }
+
+      .host-box p {
+        margin: 0.55rem 0 0;
+        color: var(--muted);
+        font-weight: 700;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
+      .organizer-list {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0.75rem auto 0;
+        color: var(--muted);
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.75;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        text-align: center;
+        text-wrap: balance;
+      }
+
+      footer {
+        padding: 2rem clamp(1.25rem, 5vw, 5rem);
+        color: rgba(255, 248, 239, 0.76);
+        background: #26170e;
+      }
+
+      .footer-inner {
+        display: flex;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 900px) {
+        .site-header {
+          align-items: center;
+          padding: 0.85rem 1rem;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero {
+          min-height: min(100svh, 52rem);
+          padding-top: 6.1rem;
+        }
+
+        .hero-inner,
+        .recruit-layout,
+        .host-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel {
+          max-width: 24rem;
+        }
+
+        .hero-panel dl {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel div {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .hero-panel div:last-child {
+          border-bottom: 0;
+        }
+
+        .quick-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+      }
+
+      @media (max-width: 620px) {
+        body {
+          line-height: 1.58;
+        }
+
+        .section-inner {
+          display: grid;
+          justify-items: center;
+        }
+
+        .hero {
+          padding-right: 1.15rem;
+          padding-bottom: 3.2rem;
+          padding-left: 1.15rem;
+          min-height: 50rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(3.45rem, 17vw, 4.35rem);
+        }
+
+        .hero-copy {
+          max-width: 19rem;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .hero-actions,
+        .hero-panel,
+        .quick-grid,
+        .recruit-box,
+        .deadline,
+          .notice-box,
+          .host-grid {
+          width: 100%;
+          max-width: 19rem;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .section-heading {
+          width: 100%;
+          max-width: 19rem;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .section-heading h2 {
+          word-break: keep-all;
+          overflow-wrap: normal;
+        }
+
+        .section-heading p {
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+
+        .hero-actions,
+        .footer-inner {
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .quick-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .info-card {
+          min-height: auto;
+        }
+
+        .detail-row {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+          padding: 0.9rem 0;
+        }
+
+        .detail-row dt,
+        .detail-row dd {
+          text-align: center;
+        }
+
+        .inline-list li {
+          text-align: left;
+        }
+
+        .notice-list li {
+          grid-template-columns: 1.55rem minmax(0, 1fr);
+          gap: 0.65rem;
+        }
+
+        .notice-list li::before {
+          width: 1.55rem;
+          height: 1.55rem;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="site-header" aria-label="상단 내비게이션">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">♪</span>
+        <span>2026 아카펠라 버스킹 축제</span>
+      </div>
+      <nav class="nav" aria-label="페이지 이동">
+        <a href="#about">행사 정보</a>
+        <a href="#recruit">참가 모집</a>
+        <a href="#notes">주의사항</a>
+        <a href="#hosts">주최/주관</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">가을 신촌에서 만나는 목소리의 거리공연</p>
+          <h1 id="hero-title">
+            <span class="title-line">2026</span>
+            <span class="title-line">아카펠라</span>
+            <span class="title-line">버스킹 축제</span>
+          </h1>
+          <p class="hero-copy">
+            악기 없이 목소리만으로 채우는 오후. 신촌 명물쉼터에서 아카펠라 팀들과 관객이 가까이
+            만나는 가을 버스킹 무대를 엽니다.
+          </p>
+          <div class="hero-actions" aria-label="주요 이동">
+            <a class="button primary" href="#recruit">참가팀 모집 보기</a>
+            <a class="button secondary" href="#notes">주의사항 확인</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="행사 핵심 정보">
+          <dl>
+            <div>
+              <dt>일시</dt>
+              <dd>2026.10.17 토요일<br />13:00 ~ 18:00<br />우천시도 진행</dd>
+            </div>
+            <div>
+              <dt>장소</dt>
+              <dd>신촌 명물쉼터<br />유플렉스 신촌점 건너편</dd>
+            </div>
+            <div>
+              <dt>참가 규모</dt>
+              <dd>최대 20팀 선착순 모집</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <main>
+      <section id="about" aria-labelledby="about-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="label">Festival Overview</span>
+            <h2 id="about-title">목소리로 만드는 가을 오후</h2>
+            <p>
+              행사에 필요한 날짜, 장소, 공연 흐름을 빠르게 확인할 수 있도록 핵심 정보를 먼저 정리했습니다.
+            </p>
+          </div>
+          <div class="quick-grid">
+            <article class="info-card">
+              <span class="icon" aria-hidden="true">날</span>
+              <h3>행사 일정</h3>
+              <p>2026년 10월 17일 토요일, 오후 1시부터 6시까지 진행됩니다. 우천시도 진행됩니다.</p>
+            </article>
+            <article class="info-card">
+              <span class="icon" aria-hidden="true">장</span>
+              <h3>공연 장소</h3>
+              <p>서대문구 창천동 31-62, 유플렉스 신촌점 건너편 신촌 명물쉼터에서 열립니다.</p>
+            </article>
+            <article class="info-card">
+              <span class="icon" aria-hidden="true">팀</span>
+              <h3>모집 팀 수</h3>
+              <p>참가팀은 최대 20팀까지 선착순으로 모집합니다.</p>
+            </article>
+            <article class="info-card">
+              <span class="icon" aria-hidden="true">분</span>
+              <h3>출연 시간</h3>
+              <p>팀당 출연시간은 멘트를 포함해 13분입니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="recruit" id="recruit" aria-labelledby="recruit-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="label">Open Call</span>
+            <h2 id="recruit-title">참가팀 모집</h2>
+            <p>목소리만으로 연주하는 아카펠라팀이라면 참가 신청이 가능합니다.</p>
+          </div>
+          <div class="recruit-layout">
+            <div class="deadline" aria-label="모집 마감 안내">
+              <span>모집기한</span>
+              <strong>2026.06.22 ~ 2026.07.31</strong>
+              <span>1차 마감 기준입니다.</span>
+            </div>
+            <div class="recruit-box">
+              <dl class="detail-list">
+                <div class="detail-row">
+                  <dt>모집 팀 수</dt>
+                  <dd>최대 20팀 선착순</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>참가자격</dt>
+                  <dd>
+                    <ul class="inline-list">
+                      <li>목소리만으로 연주하는 아카펠라팀 누구나</li>
+                      <li>3명 이상 10명 이하</li>
+                      <li>개인 음향 반입 불가, 제공된 음향 사용</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="detail-row">
+                  <dt>참가비</dt>
+                  <dd>1인당 5만원, 복수 팀 출연 할인 없음</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>팀당 출연시간</dt>
+                  <dd>13분, 멘트 포함</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>신청서 링크</dt>
+                  <dd><span class="empty-link" aria-label="추후 입력 예정"></span></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notes" id="notes" aria-labelledby="notes-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="label">Please Note</span>
+            <h2 id="notes-title">참가 전 꼭 확인해주세요</h2>
+            <p>우천 진행, 참가비, 촬영 및 개인정보 보관에 관한 안내입니다.</p>
+          </div>
+          <div class="notice-box">
+            <ul class="notice-list">
+              <li>우천시에도 진행될 예정이며, 천재지변의 경우 취소될 수 있습니다.</li>
+              <li>
+                기본적으로 참가비는 입금 후 원칙적으로 환불이 불가합니다. 천재지변(태풍 등)으로
+                행사가 취소되더라도 이미 지출된 장비 대여 및 물품 구입 비용으로 인해 전액 환불이
+                어려운 점 양해 부탁드립니다. 단, 행사 종료 후 남은 예산은 팀별로 정산하여
+                돌려드리겠습니다.
+              </li>
+              <li>
+                참가비는 1인당 5만원이며 팀별로 입금하셔야 합니다. 중복 참여 인원은 소속 팀 수에
+                맞게 참가비를 입금하셔야 합니다. 예를 들어 팀 2개인 경우 10만원을 입금합니다.
+              </li>
+              <li>보내주신 개인정보는 본 공연이 운영되는 기간만 보관됩니다.</li>
+              <li>행사 당일의 모습을 사진 및 동영상으로 촬영합니다. 양해바랍니다.</li>
+              <li>
+                동일 멤버가 복수의 팀으로 출연할 경우, 가능한 한 타임 스케줄 작성 시 고려해 드릴
+                예정이니 신청서 작성 때 반드시 알려주세요.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="hosts" id="hosts" aria-labelledby="hosts-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="label">Host & Partners</span>
+            <h2 id="hosts-title">함께 만드는 축제</h2>
+          </div>
+          <div class="host-grid">
+            <article class="host-box">
+              <h3>주최</h3>
+              <p>한국아카펠라아카데미</p>
+            </article>
+            <article class="host-box">
+              <h3>주관(아카펠라 동호회)</h3>
+              <p class="organizer-list">아카펠라 막:창, 지카, 기가히츠, 모노, 키씽, 야크</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>2026 아카펠라 버스킹 축제</span>
+        <span>신촌 명물쉼터 · 2026.10.17 · 13:00 ~ 18:00</span>
+      </div>
+    </footer>
+  </body>
+</html>
+
