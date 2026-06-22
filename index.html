@@ -451,9 +451,52 @@
         align-items: start;
       }
 
+      .recruit-highlight {
+        margin: 0 auto 1.35rem;
+        padding: 0.95rem 1.1rem;
+        color: #fff8ef;
+        font-size: clamp(1.12rem, 2.3vw, 1.34rem);
+        font-weight: 800;
+        text-align: center;
+        border: 1px solid rgba(115, 48, 71, 0.24);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(115, 48, 71, 0.92), rgba(183, 91, 53, 0.9)),
+          linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.16));
+        box-shadow: 0 18px 52px rgba(93, 55, 25, 0.12);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
       .recruit-box {
         padding: clamp(1.25rem, 3vw, 2rem);
         background: var(--paper-strong);
+      }
+
+      .map-box {
+        overflow: hidden;
+        margin-top: 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.92);
+        box-shadow: 0 18px 52px rgba(93, 55, 25, 0.08);
+      }
+
+      .map-frame {
+        width: 100%;
+        height: 20rem;
+        border: 0;
+        display: block;
+      }
+
+      .map-caption {
+        padding: 0.9rem 1rem 1rem;
+        color: var(--muted);
+        font-size: 0.94rem;
+        font-weight: 700;
+        text-align: center;
+        word-break: keep-all;
+        overflow-wrap: break-word;
       }
 
       .deadline {
@@ -495,11 +538,14 @@
 
       .detail-row dt {
         color: var(--clay);
+        font-size: 1.02rem;
+        font-weight: 900;
         text-align: center;
       }
 
       .detail-row dd {
         color: var(--ink);
+        font-size: 1.14rem;
         font-weight: 700;
         word-break: keep-all;
         overflow-wrap: break-word;
@@ -523,6 +569,7 @@
         border-radius: 8px;
         background: rgba(183, 91, 53, 0.08);
         color: var(--ink);
+        font-size: 1.04rem;
         word-break: keep-all;
         overflow-wrap: break-word;
       }
@@ -536,10 +583,15 @@
       }
 
       .empty-link {
-        display: block;
+        display: inline-flex;
         width: min(100%, 18rem);
         min-height: 1.8rem;
         margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        color: var(--clay);
+        font-weight: 800;
+        text-decoration: none;
         border-bottom: 1px solid rgba(115, 48, 71, 0.34);
       }
 
@@ -760,6 +812,10 @@
           max-width: 100%;
         }
 
+        .map-frame {
+          height: 16rem;
+        }
+
         .quick-grid {
           grid-template-columns: 1fr;
         }
@@ -875,8 +931,8 @@
             </article>
             <article class="info-card">
               <span class="icon" aria-hidden="true">분</span>
-              <h3>출연 시간</h3>
-              <p>팀당 출연시간은 멘트를 포함해 13분입니다.</p>
+              <h3>공연 시간</h3>
+              <p>팀당 15분(입/퇴장 포함)입니다.</p>
             </article>
           </div>
         </div>
@@ -887,12 +943,14 @@
           <div class="section-heading">
             <span class="label">Open Call</span>
             <h2 id="recruit-title">참가팀 모집</h2>
-            <p>목소리만으로 연주하는 아카펠라팀이라면 참가 신청이 가능합니다.</p>
+          </div>
+          <div class="recruit-highlight">
+            국내 최초, 최장시간, 릴레이 아카펠라 버스킹! 함께 하실 팀을 모집합니다
           </div>
           <div class="recruit-layout">
             <div class="deadline" aria-label="모집 마감 안내">
               <span>모집기한</span>
-              <strong>2026.06.22 ~ 2026.07.31</strong>
+              <strong>2026.06.23 ~ 2026.07.31</strong>
               <span>1차 마감 기준입니다.</span>
             </div>
             <div class="recruit-box">
@@ -913,18 +971,32 @@
                 </div>
                 <div class="detail-row">
                   <dt>참가비</dt>
-                  <dd>1인당 5만원, 복수 팀 출연 할인 없음</dd>
+                  <dd>1인당 3만원, 복수 팀 출연 할인 없음</dd>
                 </div>
                 <div class="detail-row">
-                  <dt>팀당 출연시간</dt>
-                  <dd>13분, 멘트 포함</dd>
+                  <dt>팀당 공연시간</dt>
+                  <dd>팀당 15분(입/퇴장 포함)</dd>
                 </div>
                 <div class="detail-row">
                   <dt>신청서 링크</dt>
-                  <dd><span class="empty-link" aria-label="추후 입력 예정"></span></dd>
+                  <dd>
+                    <a class="empty-link" href="https://naver.me/Fc6BlXWu" target="_blank" rel="noreferrer"
+                      >신청서 바로가기</a
+                    >
+                  </dd>
                 </div>
               </dl>
             </div>
+          </div>
+          <div class="map-box" aria-label="신촌 명물쉼터 지도">
+            <iframe
+              class="map-frame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%20%EC%B0%BD%EC%B2%9C%EB%8F%99%2031-62&z=17&output=embed"
+              title="신촌 명물쉼터 위치 지도"
+            ></iframe>
+            <div class="map-caption">신촌 명물쉼터 · 서대문구 창천동 31-62 · 유플렉스 신촌점 건너편</div>
           </div>
         </div>
       </section>
@@ -946,8 +1018,8 @@
                 돌려드리겠습니다.
               </li>
               <li>
-                참가비는 1인당 5만원이며 팀별로 입금하셔야 합니다. 중복 참여 인원은 소속 팀 수에
-                맞게 참가비를 입금하셔야 합니다. 예를 들어 팀 2개인 경우 10만원을 입금합니다.
+                참가비는 1인당 3만원이며 팀별로 입금하셔야 합니다. 중복 참여 인원은 소속 팀 수에
+                맞게 참가비를 입금하셔야 합니다. 예를 들어 팀 2개인 경우 6만원을 입금합니다.
               </li>
               <li>보내주신 개인정보는 본 공연이 운영되는 기간만 보관됩니다.</li>
               <li>행사 당일의 모습을 사진 및 동영상으로 촬영합니다. 양해바랍니다.</li>
@@ -973,7 +1045,10 @@
             </article>
             <article class="host-box">
               <h3>주관(아카펠라 동호회)</h3>
-              <p class="organizer-list">아카펠라 막:창, 지카, 기가히츠, 모노, 키씽, 야크</p>
+              <p class="organizer-list">
+                한국아카펠라아카데미, 아카펠라 막:창, 지카-Zeeckah,<br />
+                기가히츠, 모노, 키씽, 야크
+              </p>
             </article>
           </div>
         </div>
