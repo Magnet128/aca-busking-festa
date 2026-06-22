@@ -226,6 +226,26 @@
         margin-top: 2rem;
       }
 
+      .contact-callout {
+        display: inline-flex;
+        width: fit-content;
+        max-width: 100%;
+        margin-top: 1rem;
+        padding: 0.78rem 1rem;
+        align-items: center;
+        justify-content: center;
+        color: #fff8ef;
+        font-size: clamp(0.98rem, 2.4vw, 1.08rem);
+        font-weight: 800;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+
       .button {
         display: inline-flex;
         min-height: 3.25rem;
@@ -683,7 +703,14 @@
         word-break: keep-all;
         overflow-wrap: break-word;
         text-align: center;
-        text-wrap: balance;
+      }
+
+      .organizer-list span {
+        display: inline;
+      }
+
+      .organizer-list-mobile {
+        display: none;
       }
 
       footer {
@@ -848,6 +875,19 @@
           width: 1.55rem;
           height: 1.55rem;
         }
+
+        .organizer-list {
+          display: none;
+        }
+
+        .organizer-list-mobile {
+          display: grid;
+          gap: 0.42rem;
+        }
+
+        .organizer-list-mobile span {
+          display: block;
+        }
       }
 
     </style>
@@ -883,6 +923,7 @@
             <a class="button primary" href="#recruit">참가팀 모집 보기</a>
             <a class="button secondary" href="#notes">주의사항 확인</a>
           </div>
+          <a class="contact-callout" href="tel:01039307995">공연 문의: 010-3930-7995</a>
         </div>
         <aside class="hero-panel" aria-label="행사 핵심 정보">
           <dl>
@@ -1045,10 +1086,19 @@
             </article>
             <article class="host-box">
               <h3>주관(아카펠라 동호회)</h3>
-              <p class="organizer-list">
+              <div class="organizer-list">
                 한국아카펠라아카데미, 아카펠라 막:창, 지카-Zeeckah,<br />
                 기가히츠, 모노, 키씽, 야크
-              </p>
+              </div>
+              <div class="organizer-list organizer-list-mobile">
+                <span>한국아카펠라아카데미</span>
+                <span>아카펠라 막:창</span>
+                <span>지카-Zeeckah</span>
+                <span>기가히츠</span>
+                <span>모노</span>
+                <span>키씽</span>
+                <span>야크</span>
+              </div>
             </article>
           </div>
         </div>
@@ -1058,6 +1108,7 @@
     <footer>
       <div class="footer-inner">
         <span>2026 아카펠라 버스킹 축제</span>
+        <a href="tel:01039307995">공연 문의: 010-3930-7995</a>
         <span>신촌 명물쉼터 · 2026.10.17 · 13:00 ~ 18:00</span>
       </div>
     </footer>
