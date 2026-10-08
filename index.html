@@ -756,26 +756,20 @@
         color: rgba(255, 250, 240, 0.82);
       }
 
-      .team-preview {
-        display: grid;
-        width: min(36rem, 100%);
-        min-height: 12rem;
-        place-items: center;
+      .team-poster {
+        width: min(52rem, 100%);
         margin: 0 auto;
-        padding: 2rem;
-        color: var(--ink);
-        text-align: center;
         border: 1px solid rgba(255, 255, 255, 0.38);
         border-radius: 8px;
+        overflow: hidden;
         background: rgba(255, 250, 240, 0.92);
         box-shadow: var(--shadow);
-        backdrop-filter: blur(10px);
       }
 
-      .team-preview strong {
-        color: var(--teal);
-        font-size: clamp(1.7rem, 4vw, 2.4rem);
-        word-break: keep-all;
+      .team-poster img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       footer {
@@ -954,7 +948,7 @@
           display: block;
         }
 
-        .team-preview {
+        .team-poster {
           width: 100%;
           max-width: 19rem;
           margin-right: auto;
@@ -1067,9 +1061,15 @@
             <h2 id="teams-title">참가팀 소개</h2>
             <p>무대를 채울 아카펠라 팀들의 이야기를 곧 만나보실 수 있습니다.</p>
           </div>
-          <div class="team-preview">
-            <strong>추후 공개</strong>
-          </div>
+          <figure class="team-poster">
+            <img
+              src="./assets/participants-poster-illustrated.jpg"
+              alt="2026 아카펠라 버스킹 축제 참가팀 포스터"
+              width="1587"
+              height="2245"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </section>
 
