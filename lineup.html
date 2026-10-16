@@ -13,22 +13,86 @@
       }
 
       .pamphlet-page {
-        background: #eaf4f0;
+        color: #fffaf0;
+        background-color: #0b3941;
+        background-image:
+          linear-gradient(180deg, rgba(12, 77, 87, 0.9), rgba(9, 58, 67, 0.94)),
+          url("./assets/autumn-mosaic-street.jpg");
+        background-position: center top;
+        background-size: auto, 100% auto;
+        background-repeat: repeat;
       }
 
       .pamphlet-main {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding: clamp(1rem, 3vw, 2.5rem);
-        background: #eaf4f0;
+        width: min(1080px, 100%);
+        margin-inline: auto;
+        padding: 2.5rem 1rem 4rem;
       }
 
-      .pamphlet-image {
+      .performance {
+        margin: 0 0 3.5rem;
+      }
+
+      .performance:last-child {
+        margin-bottom: 0;
+      }
+
+      .performance figcaption {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
+        gap: 0.6rem;
+        margin-bottom: 1.15rem;
+        color: #fff5dd;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.35;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+      }
+
+      .performance figcaption::before {
+        content: "";
+        width: 0.35rem;
+        height: 1.5rem;
+        align-self: center;
+        margin-right: 0.25rem;
+        background: #dda13a;
+      }
+
+      .performance img {
         display: block;
-        width: min(100%, 1280px);
+        width: 100%;
         height: auto;
-        box-shadow: 0 18px 45px rgba(22, 79, 88, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        box-shadow: 0 20px 50px rgba(0, 25, 30, 0.22);
+      }
+
+      .intermission-note {
+        margin: 0 0 3.5rem;
+        padding: 1rem;
+        border-block: 1px solid rgba(255, 245, 221, 0.3);
+        color: #fff5dd;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 800;
+      }
+
+      @media (max-width: 560px) {
+        .pamphlet-main {
+          padding: 1.75rem 0 2.5rem;
+        }
+
+        .performance figcaption {
+          padding-inline: 0.75rem;
+          font-size: 1.65rem;
+        }
+
+        .intermission-note {
+          font-size: 1.2rem;
+        }
       }
     </style>
   </head>
@@ -43,13 +107,101 @@
     </header>
 
     <main class="pamphlet-main">
-      <img
-        class="pamphlet-image"
-        src="./assets/pamphlet-back.png"
-        alt="2026 아카펠라 버스킹 축제 출연팀 소개 및 타임테이블"
-        width="1587"
-        height="2245"
-      />
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T13:00">13:00</time> ~ <time datetime="2026-10-17T13:15">13:15</time></figcaption>
+        <img src="./assets/team-posters/bsharp.webp" alt="B# 팀 소개와 플레이리스트" width="1080" height="1350" fetchpriority="high" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T13:15">13:15</time> ~ <time datetime="2026-10-17T13:30">13:30</time></figcaption>
+        <img src="./assets/team-posters/thirsty-deer.webp" alt="목마른 사슴들 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T13:30">13:30</time> ~ <time datetime="2026-10-17T13:45">13:45</time></figcaption>
+        <img src="./assets/team-posters/kimjeonbaki.webp" alt="김전박이 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T13:45">13:45</time> ~ <time datetime="2026-10-17T14:00">14:00</time></figcaption>
+        <img src="./assets/team-posters/scisori.webp" alt="사이소리 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T14:00">14:00</time> ~ <time datetime="2026-10-17T14:15">14:15</time></figcaption>
+        <img src="./assets/team-posters/instru.webp" alt="INSTRU 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T14:15">14:15</time> ~ <time datetime="2026-10-17T14:30">14:30</time></figcaption>
+        <img src="./assets/team-posters/shinsegae.webp" alt="신세계 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T14:30">14:30</time> ~ <time datetime="2026-10-17T14:45">14:45</time></figcaption>
+        <img src="./assets/team-posters/dgr.webp" alt="D.G.R 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T14:45">14:45</time> ~ <time datetime="2026-10-17T15:00">15:00</time></figcaption>
+        <img src="./assets/team-posters/melodyway.webp" alt="멜로디웨이 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T15:00">15:00</time> ~ <time datetime="2026-10-17T15:15">15:15</time></figcaption>
+        <img src="./assets/team-posters/apdo.webp" alt="압도 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T15:15">15:15</time> ~ <time datetime="2026-10-17T15:30">15:30</time></figcaption>
+        <img src="./assets/team-posters/project-y.webp" alt="PROJECT Y 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T15:30">15:30</time> ~ <time datetime="2026-10-17T15:45">15:45</time></figcaption>
+        <img src="./assets/team-posters/achacha.webp" alt="아차차 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T15:45">15:45</time> ~ <time datetime="2026-10-17T16:00">16:00</time></figcaption>
+        <img src="./assets/team-posters/maka.webp" alt="마카 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <p class="intermission-note"><time datetime="2026-10-17T16:00">16:00</time> ~ <time datetime="2026-10-17T16:15">16:15</time> · 인터미션</p>
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T16:15">16:15</time> ~ <time datetime="2026-10-17T16:30">16:30</time></figcaption>
+        <img src="./assets/team-posters/olivia.webp" alt="올리비아 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T16:30">16:30</time> ~ <time datetime="2026-10-17T16:45">16:45</time></figcaption>
+        <img src="./assets/team-posters/layered.webp" alt="레이어드 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T16:45">16:45</time> ~ <time datetime="2026-10-17T17:00">17:00</time></figcaption>
+        <img src="./assets/team-posters/maltese.webp" alt="말티즈 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T17:00">17:00</time> ~ <time datetime="2026-10-17T17:15">17:15</time></figcaption>
+        <img src="./assets/team-posters/heidiband.webp" alt="하이디밴드 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T17:15">17:15</time> ~ <time datetime="2026-10-17T17:30">17:30</time></figcaption>
+        <img src="./assets/team-posters/aca-iv.webp" alt="아카이브 (ACA_IV) 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T17:30">17:30</time> ~ <time datetime="2026-10-17T17:45">17:45</time></figcaption>
+        <img src="./assets/team-posters/ast.webp" alt="AST 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="performance">
+        <figcaption><time datetime="2026-10-17T17:45">17:45</time> ~ <time datetime="2026-10-17T18:00">18:00</time></figcaption>
+        <img src="./assets/team-posters/addalcohol.webp" alt="애드알콜 팀 소개와 플레이리스트" width="1080" height="1350" loading="lazy" decoding="async" />
+      </figure>
     </main>
 
     <footer class="footer">
